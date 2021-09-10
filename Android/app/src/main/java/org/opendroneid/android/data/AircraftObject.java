@@ -13,7 +13,8 @@ import org.opendroneid.android.Constants;
 
 public class AircraftObject {
     final public MutableLiveData<Connection> connection = new MutableLiveData<>();
-    final public MutableLiveData<Identification> identification = new MutableLiveData<>();
+    final public MutableLiveData<Identification> identification1 = new MutableLiveData<>();
+    final public MutableLiveData<Identification> identification2 = new MutableLiveData<>();
     final public MutableLiveData<LocationData> location = new MutableLiveData<>();
     final public MutableLiveData<AuthenticationData> authentication = new MutableLiveData<>();
     final public MutableLiveData<SelfIdData> selfid = new MutableLiveData<>();
@@ -28,7 +29,8 @@ public class AircraftObject {
     public long getMacAddress() { return macAddress; }
 
     public Connection getConnection() { return connection.getValue(); }
-    public Identification getIdentification() { return identification.getValue(); }
+    public Identification getIdentification1() { return identification1.getValue(); }
+    public Identification getIdentification2() { return identification2.getValue(); }
     public LocationData getLocation() { return location.getValue(); }
     public AuthenticationData getAuthentication() { return authentication.getValue(); }
     public SelfIdData getSelfID() { return selfid.getValue(); }
@@ -78,7 +80,8 @@ public class AircraftObject {
     public String toString() {
         return "AircraftObject{" +
                 "macAddress=" + macAddress +
-                ", identification=" + identification +
+                ", identification1=" + identification1 +
+                ", identification2=" + identification2 +
                 '}';
     }
 }

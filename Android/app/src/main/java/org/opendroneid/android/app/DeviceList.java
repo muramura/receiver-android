@@ -173,7 +173,7 @@ public class DeviceList extends Fragment {
             StateListDrawable selectableBackground =
                     FastAdapterUIUtils.getSelectableBackground(getContext(), Color.LTGRAY, true);
             view.setBackground(selectableBackground);
-            Identification id = aircraft.getIdentification();
+            Identification id = aircraft.getIdentification1();
             if (id != null)
                 textView.setText(String.format("Aircraft %s", id.getUasIdAsString()));
 
@@ -188,12 +188,12 @@ public class DeviceList extends Fragment {
 
             aircraft.connection.observe(DeviceList.this, connectionObserver);
             aircraft.location.observe(DeviceList.this, locationObserver);
-            aircraft.identification.observe(DeviceList.this, observer);
+            aircraft.identification1.observe(DeviceList.this, observer);
         }
 
         @Override
         public void unbindView(@NonNull ListItem aircraftItem) {
-            aircraft.identification.removeObserver(observer);
+            aircraft.identification1.removeObserver(observer);
             aircraft.connection.removeObserver(connectionObserver);
             aircraft.location.removeObserver(locationObserver);
         }
